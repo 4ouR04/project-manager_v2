@@ -1,0 +1,55 @@
+<div class="body">
+    <div >
+      <div class="container" id="container">
+        <div class="form-container sign-up-container">
+          <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <h1>{{!isLoginMode?'Create Account': 'Access Account'}}</h1>
+            <div class="social-container">
+              <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social"
+                ><i class="fab fa-google-plus-g"></i
+              ></a>
+              <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span>or use your email to {{!isLoginMode?'register' : 'login'}}</span>
+            <input
+             *ngIf="!isLoginMode"
+              name= "name" 
+              class="name"
+              ngModel 
+              type="text" 
+              placeholder="Name" 
+              required
+              />
+            <input 
+            class="email" 
+            type="email" 
+            name="email" 
+            ngModel 
+            placeholder="Email" 
+            required
+            email
+            #email="ngModel"
+            />
+            <span style="color: red;" *ngIf="!email.valid && email.touched">Please enter a valid email</span>
+            <input 
+            class="pass" 
+            type="password" 
+            name="password" 
+            ngModel  
+            placeholder="Password" 
+            required
+            />
+            <div>
+              <a><button
+                 type="submit"
+                 [disabled]="!f.valid"
+                >{{isLoginMode? 'Login' :'Signup'}}</button></a> |
+              <a><button type="button" class="signup" (click)="onSwitchMode()">Switch to {{!isLoginMode?'Signin':'Signup'}}</button></a>
+            </div>
+          </form>
+        </div>
+        
+
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<header class="header">
+	<h1 class="logo"><a routerLink="dashboard"><img src="https://thejitu.com/wp-content/uploads/2020/03/logo-jitu-white-40.png" alt="TheJitu"></a></h1>
+    <input type="search" placeholder="Search project">
+    <a routerLink="projects/new"><button>+ Create New Project</button></a>
+    <ul class="main-nav">
+        <div class="dropdown">
+            <p (click)="dropDown()"><img src="../../assets/images.png" alt=""><span>Amos Mwongela <i class="fa fa-caret-down"></i> </span> </p>
+            <div *ngIf="shownow" class="dropdown-content" id="myDropdown">
+                <a routerLink="settings">Settings</a>
+                <hr>
+                <a routerLink="/auth">Logout</a>
+            </div>
+        </div> 
+    </ul>
+</header> 

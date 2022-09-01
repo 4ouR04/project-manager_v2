@@ -1,0 +1,46 @@
+<div class="new-project">
+    <div class="clients">
+        <h3>Open Clients</h3>
+        <div *ngFor="let user of clients.Users">
+            <p><img src="../../../assets/images.png">{{user.Name}}</p>
+            <hr>
+        </div>
+        
+        
+        <!-- <p><img src="../../../assets/images.png">Collins</p>
+        <hr>
+        
+        <p><img src="../../../assets/images.png">Erick</p>
+        <hr>
+         -->
+    </div>
+    <div class="project-form">
+        <form [formGroup]="newProjectForm" (ngSubmit)="onSubmit()">
+            <h3>New Project</h3>
+            <label for="">Name</label>
+            <input 
+            type="text" 
+            placeholder="Project name"
+            formControlName="name"
+            >
+            <label for="">Description</label>
+            <input 
+            type="text" 
+            placeholder="Description"
+            formControlName="description"
+            >
+            <label for="">Due date</label>
+            <input 
+            type="date"
+            formControlName="date"
+            >
+            <span
+            class="err"
+            *ngIf="!newProjectForm.valid && newProjectForm.touched"
+            >Please fill all the fields</span>
+            <button 
+            [disabled]="!newProjectForm.valid"
+            type="submit">Done</button>
+        </form>
+    </div>
+</div>

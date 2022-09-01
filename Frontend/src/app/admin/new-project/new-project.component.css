@@ -1,0 +1,87 @@
+.new-project{
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    height: 30rem;
+    margin:1.5rem 2rem;
+    gap: 1.4rem;
+}
+.clients{
+    color: #393d4e;
+    background-color: #191c24;
+    border-radius: 5px;
+    padding: 1.5rem;
+
+
+}
+.clients p{
+    margin: 0.5rem 0rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.clients p img{
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    margin-right: 0.7rem;
+
+}
+hr{
+	color: #2c2e33;
+
+}
+h3{
+    color: #fff;
+    font-size: 1rem;
+
+}
+.project-form{
+    color: #393d4e;
+    background-color: #191c24;
+    border-radius: 5px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+form{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+
+}
+input{
+    background-color: transparent;
+    height: 2.5rem;
+    color: #4c5169;
+    border-radius: 5px;
+	padding-left: 1rem;
+    /* text-align: center; */
+    width: 26rem;
+    border:1px solid #2c2e33;
+    font-size: 15px;
+    margin: 0.7rem 0rem;
+}
+button{
+    cursor: pointer;
+    color: #fff;
+    background-color: #0090e7;
+    margin-top: 2rem;
+    height: 2.3rem;
+    border: none;
+    border-radius: 5px;
+    width: 26rem;
+}
+button:hover{
+    opacity: 0.6;
+}
+.clients p:hover{
+    opacity: .6;
+}
+.err{
+    color: red;
+}
+button:disabled{
+    opacity: .4;
+}

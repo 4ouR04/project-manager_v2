@@ -1,0 +1,83 @@
+POST http://localhost:3000/signup
+Content-Type: application/json
+
+{
+    "Name": "Am Amos",
+    "Email": "amamos@gmail.com",
+    "Password": "hb",
+    "isAssigned": false
+}
+
+###
+POST http://localhost:3002/users/signup
+Content-Type: application/json
+
+{
+    "Name": "Amos Mwongela",
+    "Email": "amos@gmail.com",
+    "Password": "1to34567",
+    "isAssigned": false
+}
+
+
+###
+POST http://localhost:3002/users/login/
+Content-Type: application/json
+
+{
+    "Email": "amos@gmail.com",
+    "Password": "1to34567"
+}
+
+###
+GET http://localhost:3002/users/check
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6ImU3MTlhYWM5LWE5NmEtNDYzZS05ZjBhLWE5NmMyY2NkNzUxZCIsIk5hbWUiOiJBbW9zIE13b25nZWxhIiwiRW1haWwiOiJhbW9zbXdvbmdlbGFoQGdtYWlsLmNvbSIsIlJvbGUiOiJBZG1pbiIsImlzQXNzaWduZWQiOjAsImlhdCI6MTY2MDQ2ODIzNiwiZXhwIjoxNjYwNDcxODM2fQ.YiET5jwEz4meIxlSujI1NYiHu86ohVi_WSN74wyLyqM"
+}
+
+###
+###Create project
+POST http://localhost:3002/projects/
+Content-Type: application/json
+
+{
+    "ProjectName": "Node",
+    "Description": "Develop a full stack web application",
+    "Due_date": "2022/09/01"
+    
+}
+
+###
+###Get all projects
+GET http://localhost:3002/projects/
+
+###
+###Delete specific project
+DELETE http://localhost:3002/projects/d3c9dc74-a400-4e1-8095-75977504549a
+
+###
+###Update project
+PUT http://localhost:3002/projects/03b576bc-38ab-4906-b0e3-9215fb5de7b1
+Content-Type: application/json
+
+{
+    "ProjectName": "Node",
+    "Description": "On Data",
+    "Due_date": "2023/12/14"
+}
+
+###
+###Complete project
+PUT http://localhost:3002/projects/complete/308a08cd-9ac3-4a60-8c0a-5cc4208d8deb
+Content-Type: application/json
+
+###
+###Get completed
+GET http://localhost:3002/projects/completed
+
+###
+###Get users without projects
+# GET http://localhost:3002/users/all
+GET http://localhost:3002/users/notassigned
