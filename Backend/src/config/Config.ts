@@ -9,4 +9,13 @@ export let db = mysql.createConnection({
   password: "",
   database: "ProjectManager",
 });
+export const pool = mysql.createPool({
+  connectionLimit: 10,
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "ProjectManager",
+  debug: false,
+});
+
 

@@ -8,9 +8,8 @@ import {
   ProjectExtendedRequest,
   User,
 } from "../interfaces/interfaces";
-import mssql from "mssql";
 import { v4 as uid } from "uuid";
-import { db } from "../config/Config";
+import { db,pool } from "../config/Config";
 import {
   userSchema,
   UserSchema1,
@@ -103,7 +102,7 @@ export const signin = async (req: Request, res: Response) => {
 export const getUsers = async (req: Request, res: Response) => {
   try {
     let user = `SELECT Name FROM Users WHERE isAssigned= false`
-    let query = db.query(user, (error, users) => {
+    let query = pool.query(user, (error, users) => {
       if (error) {
         res.json({error})
       }else{

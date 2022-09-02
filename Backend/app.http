@@ -39,11 +39,8 @@ Content-Type: application/json
 ###
 GET http://localhost:3002/users/check
 Content-Type: application/json
-
-{
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6ImU3MTlhYWM5LWE5NmEtNDYzZS05ZjBhLWE5NmMyY2NkNzUxZCIsIk5hbWUiOiJBbW9zIE13b25nZWxhIiwiRW1haWwiOiJhbW9zbXdvbmdlbGFoQGdtYWlsLmNvbSIsIlJvbGUiOiJBZG1pbiIsImlzQXNzaWduZWQiOjAsImlhdCI6MTY2MDQ2ODIzNiwiZXhwIjoxNjYwNDcxODM2fQ.YiET5jwEz4meIxlSujI1NYiHu86ohVi_WSN74wyLyqM"
+token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6ImU3MTlhYWM5LWE5NmEtNDYzZS05ZjBhLWE5NmMyY2NkNzUxZCIsIk5hbWUiOiJBbW9zIE13b25nZWxhIiwiRW1haWwiOiJhbW9zbXdvbmdlbGFoQGdtYWlsLmNvbSIsIlJvbGUiOiJBZG1pbiIsImlzQXNzaWduZWQiOjAsImlhdCI6MTY2MDQ2ODIzNiwiZXhwIjoxNjYwNDcxODM2fQ.YiET5jwEz4meIxlSujI1NYiHu86ohVi_WSN74wyLyqM"
     
-}
 
 ###
 ###Create project

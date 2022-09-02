@@ -109,7 +109,7 @@ exports.signin = signin;
 const getUsers = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         let user = `SELECT Name FROM Users WHERE isAssigned= false`;
-        let query = Config_1.db.query(user, (error, users) => {
+        let query = Config_1.pool.query(user, (error, users) => {
             if (error) {
                 res.json({ error });
             }
