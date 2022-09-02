@@ -34,12 +34,13 @@ export class NewProjectComponent implements OnInit {
     });
   }
   onSubmit() {
+    const token = localStorage.getItem('token') as string
     let project: IProject = {
       ProjectName: this.newProjectForm.value.name,
       Description: this.newProjectForm.value.description,
       Due_date: this.newProjectForm.value.date,
     };
-    this.service.newProject(project).subscribe((response) => {});
+    this.service.newProject(project, token).subscribe((response) => {});
 
     this.newProjectForm.reset();
   }

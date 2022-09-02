@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient , HttpHeaders} from '@angular/common/http';
 
 
 interface IProject {
@@ -12,16 +12,21 @@ interface IProject {
   providedIn: 'root',
 })
 export class ProjectsService {
-  private url = 'http://localhost:3002/';
   constructor(private httpClient: HttpClient) { }
   
-  getProjects() {
-    return this.httpClient.get('http://localhost:3002/projects/');
+  getProjects(token: string) {
+    return this.httpClient.get('http://localhost:3002/projects/', {
+      headers: new HttpHeaders({ token }),
+    });
   }
-  newProject(project: IProject) {
-    return this.httpClient.post('http://localhost:3002/projects/',project)
+  newProject(project: IProject,token: string) {
+    return this.httpClient.post('http://localhost:3002/projects/', project, {
+      headers: new HttpHeaders({ token }),
+    });
   }
-  deleteProject(id: string) {
-    return this.httpClient.delete('http://localhost:3002/projects/' + id);
+  deleteProject(id: string, token: string) {
+    return this.httpClient.delete('http://localhost:3002/projects/' + id, {
+      headers: new HttpHeaders({ token }),
+    });
   }
 }
