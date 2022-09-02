@@ -2,10 +2,9 @@ POST http://localhost:3000/signup
 Content-Type: application/json
 
 {
-    "Name": "Am Amos",
-    "Email": "amamos@gmail.com",
+    "Name": "Goat",
+    "Email": "goat@gmail.com",
     "Password": "hb",
-    "isAssigned": false
 }
 
 ###
@@ -28,6 +27,14 @@ Content-Type: application/json
     "Email": "amos@gmail.com",
     "Password": "1to34567"
 }
+###
+POST http://localhost:3002/users/login/
+Content-Type: application/json
+
+{
+    "Email": "g@gmail.com",
+    "Password": "12345678"
+}
 
 ###
 GET http://localhost:3002/users/check
@@ -35,6 +42,7 @@ Content-Type: application/json
 
 {
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6ImU3MTlhYWM5LWE5NmEtNDYzZS05ZjBhLWE5NmMyY2NkNzUxZCIsIk5hbWUiOiJBbW9zIE13b25nZWxhIiwiRW1haWwiOiJhbW9zbXdvbmdlbGFoQGdtYWlsLmNvbSIsIlJvbGUiOiJBZG1pbiIsImlzQXNzaWduZWQiOjAsImlhdCI6MTY2MDQ2ODIzNiwiZXhwIjoxNjYwNDcxODM2fQ.YiET5jwEz4meIxlSujI1NYiHu86ohVi_WSN74wyLyqM"
+    
 }
 
 ###
@@ -79,5 +87,5 @@ GET http://localhost:3002/projects/completed
 
 ###
 ###Get users without projects
-# GET http://localhost:3002/users/all
-GET http://localhost:3002/users/notassigned
+GET http://localhost:3002/users/all
+# GET http://localhost:3002/users/notassigned

@@ -15,9 +15,15 @@ export class AuthService {
     return promise;
   }
 
-  login() {
+  login(role: string) {
     this.loggedIn = true;
-    this.router.navigate(['/admin/dashboard']);
+    if (role === 'Admin') {
+      this.router.navigate(['/admin/dashboard']);
+    } else if(role==='User'){
+      this.router.navigate(['/user/dashboard'])
+    } else {
+      this.router.navigate(['/auth'])
+    }
   }
   logout() {
     this.loggedIn = false;

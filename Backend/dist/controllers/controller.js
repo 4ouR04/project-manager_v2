@@ -83,7 +83,7 @@ const signin = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
                 else {
                     const validPassword = yield bcrypt_1.default.compare(Password, User[0].Password);
                     if (!validPassword) {
-                        res.send({ Message: "Recheck the password and try again" });
+                        res.send({ message: "Recheck the password and try again" });
                         return false;
                     }
                     else {
@@ -95,8 +95,7 @@ const signin = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
                             expiresIn: "3600s",
                         });
                         res.json({
-                            Message: "Logged in successfully check projects assigned to you",
-                            token,
+                            token
                         });
                     }
                 }

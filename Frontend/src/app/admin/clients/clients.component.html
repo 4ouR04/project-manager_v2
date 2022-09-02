@@ -27,8 +27,8 @@
     <td><input type="checkbox"></td>
     <td class="photo"><img src="../../../assets/images.png" alt="photo"><span>{{user.Name}}</span></td>
     <td>{{user.Email}}</td>
-    <td>Microservices</td>
-    <td><p class="pending status">Pending</p></td>
+    <td>{{user.isAssigned? 'none' : 'Loading...'}}</td>
+    <td><p [ngClass]="'status notassigned'">{{!user.isAssigned? 'Not assigned': 'Pending'}}</p></td>
 
   </tr>
  

@@ -16,9 +16,7 @@
     /* align-items: center; */
     padding-left: 2rem;
 }
-.project:hover{
-    opacity: .6;
-}
+
 .project h3{
     color: #fff;
     /* font-size: 1.2rem; */
@@ -56,6 +54,9 @@ button{
     cursor: pointer;
     border: none;
 }
+button:hover{
+    opacity: .6;
+}
 .delete{
     border:1px solid  #fc424a ;
     color: #fc424a;
@@ -70,4 +71,41 @@ button{
 span{
     color: #fff;
     margin: 0rem 0.5rem;
+}
+.noproject{
+    display: grid;
+    grid-template-columns: 90% 10%;
+    /* justify-content: center; */
+    align-items: center;
+    background-color: #9d1969;
+    background-color: linear-gradient(to bottom right, #9d1969,#d0145a);
+    padding: 0rem 1rem;
+    width: 80vw;
+    height: 5.5rem;
+    margin: 1rem;
+    border-radius: 7px;
+    color: #fff;
+    background-image:url(../../../assets/red.png);
+    background-position: left;
+    background-repeat: no-repeat;
+}
+.btn{
+    height: 2.3rem;
+    width: 5.5rem;
+    border: none;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+}
+.btn:hover{
+    opacity: .6;
+}
+.pro{
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

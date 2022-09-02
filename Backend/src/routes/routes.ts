@@ -23,7 +23,7 @@ router.get("/all", getallUsers)
 router.get('/notassigned', getUsers)
 router.post("/login", signin);
 router.post("/signup", signup);
-router.get("/check", VerifyToken, checkUser);
+router.get("/check",VerifyToken, checkUser);
 
 router.get("/", getProjects);
 router.get("/completed", getCompletedProjects);

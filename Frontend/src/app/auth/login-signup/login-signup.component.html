@@ -31,7 +31,6 @@
             email
             #email="ngModel"
             />
-            <span style="color: red;" *ngIf="!email.valid && email.touched">Please enter a valid email</span>
             <input 
             class="pass" 
             type="password" 
@@ -40,6 +39,7 @@
             placeholder="Password" 
             required
             />
+            <span style="color: red;" >{{message}}</span>
             <div>
               <a><button
                  type="submit"

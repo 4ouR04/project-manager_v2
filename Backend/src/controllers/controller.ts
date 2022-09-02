@@ -78,7 +78,7 @@ export const signin = async (req: Request, res: Response) => {
             User[0].Password
           );
           if (!validPassword) {
-            res.send({ Message: "Recheck the password and try again" });
+            res.send({ message: "Recheck the password and try again" });
             return false;
           } else {
             const payload = User.map((item: any) => {
@@ -90,8 +90,7 @@ export const signin = async (req: Request, res: Response) => {
             });
 
             res.json({
-              Message: "Logged in successfully check projects assigned to you",
-              token,
+              token
             });
           }
         }
@@ -303,6 +302,7 @@ export const deleteProject: RequestHandler<{ id: string }> = async (
 
 export const checkUser = async (req: Extended, res: Response) => {
   if (req.info) {
+    
     res.json({ Name: req.info.Name, Role: req.info.Role });
   } else {
     res.json({ Error });
