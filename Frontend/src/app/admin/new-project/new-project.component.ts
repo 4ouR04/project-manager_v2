@@ -17,6 +17,7 @@ interface IProject{
 export class NewProjectComponent implements OnInit {
   newProjectForm!: FormGroup;
   clients: any;
+  token = localStorage.getItem('token') as string
 
   constructor(
     private service: ProjectsService,
@@ -29,18 +30,17 @@ export class NewProjectComponent implements OnInit {
       description: new FormControl(null, Validators.required),
       date: new FormControl(null, [Validators.required]),
     });
-    this.userservice.getUsersWP().subscribe((response) => {
+    this.userservice.getUsersWP(this.token).subscribe((response) => {
       this.clients = response;
     });
   }
   onSubmit() {
-    const token = localStorage.getItem('token') as string
     let project: IProject = {
       ProjectName: this.newProjectForm.value.name,
       Description: this.newProjectForm.value.description,
       Due_date: this.newProjectForm.value.date,
     };
-    this.service.newProject(project, token).subscribe((response) => {});
+    this.service.newProject(project, this.token).subscribe((response) => {});
 
     this.newProjectForm.reset();
   }

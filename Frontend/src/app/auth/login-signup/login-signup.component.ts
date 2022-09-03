@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {
   AuthService
-} from 'src/app/auth.service';
+} from 'src/app/services/auth.service';
 import { NgForm } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -46,8 +45,11 @@ export class LoginSignupComponent implements OnInit {
         this.userdata = response
         this.message = this.userdata.message || this.userdata.error
       
+
+        // store generated token in the local storage
         localStorage.setItem('token', this.userdata.token)
-        // console.log(this.userdata.error)
+
+        // check user role
         this.service.checkUser(this.userdata.token).subscribe(frmjwt => {
           this.mydata = frmjwt
           return this.authService.login(this.mydata.Role);
@@ -67,3 +69,7 @@ export class LoginSignupComponent implements OnInit {
   }
   
 }
+
+// Author: Amos Mwongela Gabriel
+// Email:  amosmwongelah@gmail.com
+// File:   login-signup.component.ts

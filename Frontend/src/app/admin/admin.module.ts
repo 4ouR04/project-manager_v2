@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NewProjectComponent } from './new-project/new-project.component';
 import { AdminComponent } from './admin.component';
-import { AuthGuard } from '../auth-guard.service';
+import { AuthGuard } from '../services/auth-guard.service';
 import { ClientsComponent } from './clients/clients.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
