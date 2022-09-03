@@ -4,7 +4,7 @@ const express_1 = require("express");
 const controller_1 = require("../controllers/controller");
 const verifyToken_1 = require("../middleware/verifyToken");
 const router = (0, express_1.Router)();
-router.get("/all", controller_1.getallUsers);
+router.get("/all", verifyToken_1.VerifyToken, controller_1.getallUsers);
 router.get('/notassigned', verifyToken_1.VerifyToken, controller_1.getUsers);
 router.post("/login", controller_1.signin);
 router.post("/signup", controller_1.signup);

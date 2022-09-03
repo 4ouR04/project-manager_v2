@@ -19,7 +19,7 @@ import { VerifyToken } from "../middleware/verifyToken";
 const router = Router();
 
 
-router.get("/all", getallUsers)
+router.get("/all",VerifyToken, getallUsers)
 router.get('/notassigned',VerifyToken, getUsers)
 router.post("/login", signin);
 router.post("/signup", signup);
